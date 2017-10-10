@@ -10,7 +10,7 @@
     public class Date : Input, IContentField
     {
         // Fields
-        private SupportDateTimePicker picker;
+        private Sitecore.Support.Web.UI.HtmlControls.DateTimePicker picker;
 
         // Methods
         public Date()
@@ -88,7 +88,7 @@
 
         protected override void OnInit(EventArgs e)
         {
-            this.picker = new SupportDateTimePicker();
+            this.picker = new Sitecore.Support.Web.UI.HtmlControls.DateTimePicker();
             this.picker.ID = this.ID + "_picker";
             this.Controls.Add(this.picker);
             if (!string.IsNullOrEmpty(this.RealValue))

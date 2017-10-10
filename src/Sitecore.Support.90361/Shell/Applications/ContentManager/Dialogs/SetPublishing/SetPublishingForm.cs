@@ -19,13 +19,13 @@
     {
         protected Checkbox NeverPublish;
 
-        protected SupportDateTimePicker Publish;
+        protected Sitecore.Support.Web.UI.HtmlControls.DateTimePicker Publish;
 
         protected Border PublishingTargets;
 
         protected Border PublishPanel;
 
-        protected SupportDateTimePicker Unpublish;
+        protected Sitecore.Support.Web.UI.HtmlControls.DateTimePicker Unpublish;
 
         protected Border Versions;
 
@@ -45,7 +45,7 @@
 
         private void ChangeDateTimePickerState(Sitecore.Web.UI.HtmlControls.Control parent, string controlId, bool state)
         {
-            SupportDateTimePicker supportDateTimePicker = parent.FindControl(controlId) as SupportDateTimePicker;
+            Sitecore.Support.Web.UI.HtmlControls.DateTimePicker supportDateTimePicker = parent.FindControl(controlId) as Sitecore.Support.Web.UI.HtmlControls.DateTimePicker;
             bool flag = supportDateTimePicker != null;
             if (flag)
             {
@@ -126,8 +126,8 @@
                 {
                     Context.ClientPage.ClientRequest.Form["hide_" + item.Version.Number]
                 }).Length <= 0;
-                SupportDateTimePicker supportDateTimePicker = this.Versions.FindControl("validfrom_" + item.Version.Number) as SupportDateTimePicker;
-                SupportDateTimePicker supportDateTimePicker2 = this.Versions.FindControl("validto_" + item.Version.Number) as SupportDateTimePicker;
+                Sitecore.Support.Web.UI.HtmlControls.DateTimePicker supportDateTimePicker = this.Versions.FindControl("validfrom_" + item.Version.Number) as Sitecore.Support.Web.UI.HtmlControls.DateTimePicker;
+                Sitecore.Support.Web.UI.HtmlControls.DateTimePicker supportDateTimePicker2 = this.Versions.FindControl("validto_" + item.Version.Number) as Sitecore.Support.Web.UI.HtmlControls.DateTimePicker;
                 Assert.IsNotNull(supportDateTimePicker, "Version valid from datetime picker");
                 Assert.IsNotNull(supportDateTimePicker2, "Version valid to datetime picker");
                 DateTime dateTime = DateUtil.IsoDateToDateTime(supportDateTimePicker.Value, DateTime.MinValue);
@@ -240,7 +240,7 @@
                 }), new object[0]);
                 stringBuilder.Append("<td>");
                 this.Versions.Controls.Add(new LiteralControl(stringBuilder.ToString()));
-                SupportDateTimePicker supportDateTimePicker = new SupportDateTimePicker
+                Sitecore.Support.Web.UI.HtmlControls.DateTimePicker supportDateTimePicker = new Sitecore.Support.Web.UI.HtmlControls.DateTimePicker
                 {
                     ID = "validfrom_" + text2,
                     Width = new Unit(100.0, UnitType.Percentage),
@@ -248,7 +248,7 @@
                 };
                 this.Versions.Controls.Add(supportDateTimePicker);
                 this.Versions.Controls.Add(new LiteralControl("</td><td>"));
-                SupportDateTimePicker supportDateTimePicker2 = new SupportDateTimePicker
+                Sitecore.Support.Web.UI.HtmlControls.DateTimePicker supportDateTimePicker2 = new Sitecore.Support.Web.UI.HtmlControls.DateTimePicker
                 {
                     ID = "validto_" + text2,
                     Width = new Unit(100.0, UnitType.Percentage),

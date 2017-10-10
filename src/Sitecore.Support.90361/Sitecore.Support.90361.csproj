@@ -55,7 +55,7 @@
     <Compile Include="Shell\Applications\ContentEditor\Date.cs" />
     <Compile Include="Shell\Applications\ContentEditor\DateTime.cs" />
     <Compile Include="Shell\Applications\ContentManager\Dialogs\SetPublishing\SetPublishingForm.cs" />
-    <Compile Include="Web\UI\HtmlControls\SupportDateTimePicker.cs" />
+    <Compile Include="Web\UI\HtmlControls\DateTimePicker.cs" />
     <Compile Include="Web\UI\HtmlControls\TimePicker.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace Sitecore.Support.Web.UI.HtmlControls
 {
-    public class SupportDateTimePicker : Border
+    public class DateTimePicker : Border
     {
         private DatePicker date;
 
