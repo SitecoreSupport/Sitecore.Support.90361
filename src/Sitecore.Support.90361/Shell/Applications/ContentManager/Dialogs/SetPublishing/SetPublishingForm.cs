@@ -15,7 +15,7 @@
     using System.Text;
     using System.Web.UI;
     using System.Web.UI.WebControls;
-    public class SetPublishingForm : DialogForm
+	public class SetPublishingForm : DialogForm
     {
         protected Checkbox NeverPublish;
 
@@ -195,7 +195,7 @@
                             text2,
                             " style=\"vertical-align:middle\"/>"
                         }));
-                        stringBuilder.Append(item3.DisplayName);
+                        stringBuilder.Append(GetUIDisplayName(item3));
                         stringBuilder.Append("<br/>");
                     }
                     this.PublishingTargets.InnerHtml = stringBuilder.ToString();
@@ -293,7 +293,7 @@
             this.NeverPublish.Disabled = true;
             this.Publish.Disabled = true;
             this.Unpublish.Disabled = true;
-            this.Warning.Attributes.Remove("hidden");
+			this.Warning.Visible = true;
         }
 
         private void UpdateVersionState(int versionNumber, bool isDisabled)
@@ -303,5 +303,13 @@
             this.ChangeDateTimePickerState(this.Versions, "validto_" + versionNumber, isDisabled);
             this.ChangeDateTimePickerState(this.Versions, "validfrom_" + versionNumber, isDisabled);
         }
-    }
+		private string GetUIDisplayName(Item item)
+		{
+			if (Sitecore.Shell.UserOptions.View.UseDisplayName)
+			{
+				return item.DisplayName;
+			}
+			return item.Name;
+		}
+	}
 }
