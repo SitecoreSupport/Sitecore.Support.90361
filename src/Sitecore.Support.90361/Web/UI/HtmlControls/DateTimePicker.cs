@@ -67,9 +67,11 @@ namespace Sitecore.Support.Web.UI.HtmlControls
         {
             get
             {
+				// Modified Code Begin
                 return this.time.Value;
-            }
-            set
+				// Modified Code End
+			}
+			set
             {
                 this.time.Value = value;
             }
@@ -87,6 +89,7 @@ namespace Sitecore.Support.Web.UI.HtmlControls
             }
         }
 
+		//Modified Code begin
         public override string Value
         {
             get
@@ -148,8 +151,9 @@ namespace Sitecore.Support.Web.UI.HtmlControls
                 }
             }
         }
+		//Modified Code begin
 
-        protected override void DoRender(HtmlTextWriter output)
+		protected override void DoRender(HtmlTextWriter output)
         {
             Assert.ArgumentNotNull(output, "output");
             output.Write("<div ID=\"" + this.ID + "\" class=\"scDateTimePickerContainer\">");
